@@ -7,6 +7,9 @@ Assignments:
 4. Multi-Threading - https://docs.google.com/document/d/1kgmo9IYiG0K4lALkDqwwRY0wnCmsCIL61DxRxBiaVBE/edit
 
 
+Quizes:
+1. Maven - https://forms.gle/uZfCFSeyAG15cRc16
+
 Java
 
 1. Download - https://www.oracle.com/in/java/technologies/javase-downloads.html

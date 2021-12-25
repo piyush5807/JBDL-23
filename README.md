@@ -9,6 +9,8 @@ Assignments:
 
 Quizes:
 1. Maven - https://forms.gle/uZfCFSeyAG15cRc16
+2. Spring Web - https://forms.gle/5csWBDCsQFHEP7nq9
+3. Spring Beans - https://forms.gle/ZRhHwzotcZrJs1kMA
 
 Java
 

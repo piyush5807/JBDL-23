@@ -1,0 +1,46 @@
+package com.example.jbdl.minorproject1.models;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    @Column(nullable = false)
+    private String name;
+    private int age;
+
+    @Column(unique = true, nullable = false)
+    private String rollNo;
+
+    @OneToMany(mappedBy = "my_student")
+    @JsonIgnoreProperties("my_student")
+    private List<Book> bookList;
+
+    @OneToMany(mappedBy = "student")
+    @JsonIgnoreProperties("student")
+    private List<Request> requestsCreated;
+
+    @CreationTimestamp
+    private Date createdOn;
+
+    @OneToOne
+    @JoinColumn
+    @JsonIgnoreProperties({"student", "admin", "password"})
+    private User user;
+}

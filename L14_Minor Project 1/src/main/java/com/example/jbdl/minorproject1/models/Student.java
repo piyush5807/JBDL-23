@@ -28,11 +28,11 @@ public class Student {
     private String rollNo;
 
     @OneToMany(mappedBy = "my_student")
-    @JsonIgnoreProperties("my_student")
+    @JsonIgnoreProperties({"my_student", "requestList"})
     private List<Book> bookList;
 
     @OneToMany(mappedBy = "student")
-    @JsonIgnoreProperties("student")
+    @JsonIgnoreProperties({"student", "admin", "book", "transaction"})
     private List<Request> requestsCreated;
 
     @CreationTimestamp

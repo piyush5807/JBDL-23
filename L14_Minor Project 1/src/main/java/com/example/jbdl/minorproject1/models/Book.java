@@ -34,11 +34,11 @@ public class Book {  // Referencing class (Child)
 
     @JoinColumn
     @ManyToOne // 2 parts Many (Book) to One (Student)
-    @JsonIgnoreProperties("bookList")
+    @JsonIgnoreProperties({"bookList", "requestsCreated"})
     private Student my_student;
 
     @OneToMany(mappedBy = "book")
-    @JsonIgnoreProperties("book")
+    @JsonIgnoreProperties({"book", "student", "admin", "transaction"})
     private List<Request> requestList;
 
     @CreationTimestamp

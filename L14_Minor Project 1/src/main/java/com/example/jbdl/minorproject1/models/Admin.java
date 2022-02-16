@@ -1,5 +1,6 @@
 package com.example.jbdl.minorproject1.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,7 +25,7 @@ public class Admin {
     private String email;
 
     @OneToMany(mappedBy = "admin")
-    @JsonIgnoreProperties("admin")
+    @JsonIgnoreProperties({"admin", "student", "book", "transaction"})
     private List<Request> requestsToProcess;
 
     @CreationTimestamp

@@ -23,17 +23,17 @@ public class Request {
 
     @JoinColumn
     @ManyToOne
-    @JsonIgnoreProperties("requestsCreated")
+    @JsonIgnoreProperties({"requestsCreated", "bookList"})
     private Student student;
 
     @JoinColumn
     @ManyToOne
-    @JsonIgnoreProperties("requestsToProcess")
+    @JsonIgnoreProperties({"requestsToProcess"})
     private Admin admin;
 
     @JoinColumn
     @ManyToOne
-    @JsonIgnoreProperties("requestList")
+    @JsonIgnoreProperties({"requestList", "my_student"})
     private Book book;
 
     @OneToOne(mappedBy = "request")

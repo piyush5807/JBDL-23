@@ -26,7 +26,7 @@ public class Author { // Referenced class (Parent)
     private String website;
 
     @OneToMany(mappedBy = "author") // mappedBy param is used to tell which attribute in the child table is acting as a foreign key
-    @JsonIgnoreProperties("author")
+    @JsonIgnoreProperties({"author", "my_student", "requestList"})
     private List<Book> bookList;
 
 }
